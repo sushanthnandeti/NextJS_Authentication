@@ -26,7 +26,7 @@ export default function LoginPage() {
 
             <label className = "pb-2 text-xl" htmlFor="email" > Email </label>
             <input
-                className="p-3 border border-gray-300 rounded-lg mb-4 focus:border-gray-600"
+                className="p-3 border border-gray-300 rounded-lg mb-4 focus:border-gray-600 text-black"
                 type="text"
                 id="email"
                 value={user.email}
@@ -37,7 +37,7 @@ export default function LoginPage() {
             <hr />
             <label className = "pb-2 text-xl" htmlFor="password" > Password </label>
             <input
-                className="p-3 border border-gray-300 rounded-lg mb-4 focus:border-gray-600"
+                className="p-3 border border-gray-300 rounded-lg mb-4 focus:border-gray-600 text-black"
                 type="text"
                 id="password"
                 value={user.password}
