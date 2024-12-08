@@ -1,3 +1,4 @@
+import { verify } from "crypto";
 import mongoose from "mongoose";
 import { unique } from "next/dist/build/utils";
 import { type } from "os";
@@ -25,7 +26,11 @@ const userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    forgotPasswordToken: String, 
+    forgotPasswordTokenExpiry: Date, 
+    verifyToken : String, 
+    verifyTokenExpiry: Date,
 })
 
 const User = mongoose.models.users || mongoose.model("User", userSchema);
