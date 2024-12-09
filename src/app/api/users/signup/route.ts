@@ -5,7 +5,7 @@ import bcryptjs from "bcryptjs";
 
 
 await connect()
-console.log("Here I am");
+
 
 // Post request for User Signup 
 
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         const {username, email, password} = reqBody;
 
-        console.log("Here I am");
+        
         console.log(reqBody);    
 
         // check if the user already exits 
