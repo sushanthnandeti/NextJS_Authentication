@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
 
 
-connect();
+await connect();
 
 
 export async function POST(request: NextRequest) {
@@ -11,13 +11,12 @@ export async function POST(request: NextRequest) {
         try {
             const reqBody = await request.json();
             const {token} = reqBody;
-            console.log(token);
+           
 
             const user = await User.findOne({verifyToken: token, verifyTokenExpiry : {$gt: Date.now()}});
 
-            console.log(user);
-
             if(!user){
+                console.log(user.verifyToken);
                 return new Response('Invalid token here', {status: 400});
             }
 
@@ -34,6 +33,6 @@ export async function POST(request: NextRequest) {
 
 
         } catch (error:any) {
-                return NextResponse.json({error: error.messgae }, {status: 500})
+                return NextResponse.json({error: error.message }, {status: 500})
         }
 }
